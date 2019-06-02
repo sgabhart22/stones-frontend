@@ -11,7 +11,7 @@ export class MockCellService {
 		return 'none';
 	}
 
-	getOccupiedCell(): any {
+	getMockCell(): any {
 		return {
 			'bg': 'black',
 			'fg': 'red',
