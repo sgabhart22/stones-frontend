@@ -1,8 +1,8 @@
 const colormap = {
 	'bg' : {
 		'black': '#212121',
-		'red': '#d32f2f',
-		'green': '#43a047'
+		'red': '#B71C1C',
+		'green': '#1B5E20'
 	},
 	'fg': {
 		'red': '#f44336',
