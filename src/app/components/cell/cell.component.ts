@@ -13,38 +13,41 @@ import { colormap } from '../../constants';
 })
 export class CellComponent implements OnInit {
 
-	public anyStone: Stone, mockStone: Stone;
+	public stone: Stone;
 
   constructor(private rss: RandomStoneService, 
 							private mcs: MockCellService) { 
-		this.anyStone = this.rss.getStone();
-		this.mockStone = mcs.getMockCell();
+		this.stone = this.mcs.getMockCell();
 	}
 
   ngOnInit() {
   }
 
 	getBg(): string {
-		return colormap['bg'][this.anyStone['bg']];
+		return colormap['bg'][this.stone['bg']];
 	}
 
 	getFg(): string {
-		return colormap['fg'][this.anyStone['fg']];
+		return colormap['fg'][this.stone['fg']];
 	}
 
 	isCircle(): boolean {
-		return this.anyStone['shape'] === 'circle';
+		return this.stone['shape'] === 'circle';
 	}
 
 	isSquare(): boolean {
-		return this.anyStone['shape'] === 'square';
+		return this.stone['shape'] === 'square';
 	}
 
 	isTriangle(): boolean {
-		return this.anyStone['shape'] === 'triangle';
+		return this.stone['shape'] === 'triangle';
 	}
 
 	isStar(): boolean {
-		return this.anyStone['shape'] === 'star';
+		return this.stone['shape'] === 'star';
+	}
+
+	isWild():boolean {
+		return this.stone['shape'] === 'wild';
 	}
 }
