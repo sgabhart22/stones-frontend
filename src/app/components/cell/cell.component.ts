@@ -15,18 +15,25 @@ export class CellComponent implements OnInit {
 
   constructor(private mcs: MockCellService) { 
 		this.stone = this.mcs.getMockCell();
+		console.log(JSON.stringify(colormap['bg'][this.stone['bg']]));
 	}
 
   ngOnInit() {
   }
 
-	toggle() {
-		this.stone = this.stone === 'none' ? 
-			this.mcs.getOccupiedCell() : 'none';
+	getBg(): string {
+		return colormap['bg'][this.stone['bg']];
 	}
 
-	getBg(): any {
-		console.log(JSON.stringify(colormap['bg'][this.stone['bg']]));
-		return colormap['bg'][this.stone['bg']];
+	getFg(): string {
+		return colormap['fg'][this.stone['fg']];
+	}
+
+	isCircle(): boolean {
+		return this.stone['shape'] === 'circle';
+	}
+
+	isSquare(): boolean {
+		return this.stone['shape'] === 'square';
 	}
 }
