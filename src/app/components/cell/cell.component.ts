@@ -17,7 +17,7 @@ export class CellComponent implements OnInit {
 
   constructor(private rss: RandomStoneService, 
 							private mcs: MockCellService) { 
-		this.mockStone = this.rss.getStone();
+		this.anyStone = this.rss.getStone();
 		this.mockStone = mcs.getMockCell();
 	}
 
@@ -25,26 +25,26 @@ export class CellComponent implements OnInit {
   }
 
 	getBg(): string {
-		return colormap['bg'][this.mockStone['bg']];
+		return colormap['bg'][this.anyStone['bg']];
 	}
 
 	getFg(): string {
-		return colormap['fg'][this.mockStone['fg']];
+		return colormap['fg'][this.anyStone['fg']];
 	}
 
 	isCircle(): boolean {
-		return this.mockStone['shape'] === 'circle';
+		return this.anyStone['shape'] === 'circle';
 	}
 
 	isSquare(): boolean {
-		return this.mockStone['shape'] === 'square';
+		return this.anyStone['shape'] === 'square';
 	}
 
 	isTriangle(): boolean {
-		return this.mockStone['shape'] === 'triangle';
+		return this.anyStone['shape'] === 'triangle';
 	}
 
 	isStar(): boolean {
-		return this.mockStone['shape'] === 'star';
+		return this.anyStone['shape'] === 'star';
 	}
 }
