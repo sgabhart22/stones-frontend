@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MockBoardService } from '../../services/mock-board.service';
+import { Board } from '../../shared/board';
+import { Stone } from '../../models/stone-model';
+
+// import { MockBoardService } from '../../services/mock-board.service';
+import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-board',
@@ -9,17 +13,17 @@ import { MockBoardService } from '../../services/mock-board.service';
 })
 export class BoardComponent implements OnInit {
 
-	public board: any;
+	public board: Board<Stone>;
 
-  constructor(private mbs: MockBoardService) { 
-		this.board = this.mbs.getBoard();
+  constructor(private bs: BoardService) { 
+		this.board = this.bs.getBoard();
 	}
 
   ngOnInit() {
   }
 
-	getCoords(x: any, y: any) {
-		console.log('Cell clicked at (' + x + ', ' + y + ')');
+	getStone(x: any, y: any) {
+		console.log(this.board.getAt(x, y));
 	}
 
 }
