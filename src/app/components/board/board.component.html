@@ -6,9 +6,9 @@
 <div class="column has-text-centered">
 	<table class="table is-bordered">
 		<tbody>
-			<tr *ngFor="let row of board; let i = index">
-				<td *ngFor="let col of board[i]; let j = index" class="has-text-centered" 
-					(click)="getCoords(i, j)" style="box-sizing: inherit; background-volor: transparent;">
+			<tr *ngFor="let row of board.cells; let i = index">
+				<td *ngFor="let col of board.cells[i]; let j = index" class="has-text-centered" 
+					(click)="getStone(i, j)" style="box-sizing: inherit; background-volor: transparent;">
 					cell
 				</td>
 			</tr>
