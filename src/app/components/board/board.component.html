@@ -1,10 +1,22 @@
-<div class="board-container">
-	<div class="buffer"></div>
-	
-	<div class="board-container">
-	
-	</div>
+<div class="section">
+<div class="container">
+<div class="content">
+<div class="columns">
 
-	<div class="buffer"></div>
+<div class="column has-text-centered">
+	<table class="is-bordered">
+		<tbody>
+			<tr *ngFor="let row of board; let i = index">
+				<td *ngFor="let col of board[i]" 
+					class="has-text-centered" style="box-sizing: inherit; background-volor: transparent;">
+					cell shtuff
+				</td>
+			</tr>
+		</tbody>
+	</table>
+<div>
 
+</div>
+</div>
+</div>
 </div>
