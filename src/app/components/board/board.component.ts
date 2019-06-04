@@ -18,4 +18,8 @@ export class BoardComponent implements OnInit {
   ngOnInit() {
   }
 
+	getCoords(x: any, y: any) {
+		console.log('Cell clicked at (' + x + ', ' + y + ')');
+	}
+
 }
