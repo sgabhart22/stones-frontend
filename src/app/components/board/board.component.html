@@ -4,12 +4,12 @@
 <div class="columns">
 
 <div class="column has-text-centered">
-	<table class="is-bordered">
+	<table class="table is-bordered">
 		<tbody>
 			<tr *ngFor="let row of board; let i = index">
-				<td *ngFor="let col of board[i]" 
-					class="has-text-centered" style="box-sizing: inherit; background-volor: transparent;">
-					cell shtuff
+				<td *ngFor="let col of board[i]; let j = index" class="has-text-centered" 
+					(click)="getCoords(i, j)" style="box-sizing: inherit; background-volor: transparent;">
+					cell
 				</td>
 			</tr>
 		</tbody>
