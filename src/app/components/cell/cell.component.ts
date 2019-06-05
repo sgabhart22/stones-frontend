@@ -17,14 +17,14 @@ export class CellComponent implements OnInit {
 
   constructor(private rss: RandomStoneService, 
 							private mcs: MockCellService) { 
-		this.stone = this.mcs.getMockCell();
+		this.stone = this.rss.getStone();
 	}
 
   ngOnInit() {
   }
 
 	getBg(): string {
-		return colormap['bg'][this.stone['bg']];
+		return this.stone ? colormap['bg'][this.stone['bg']] : 'transparent';
 	}
 
 	getFg(): string {
@@ -32,22 +32,22 @@ export class CellComponent implements OnInit {
 	}
 
 	isCircle(): boolean {
-		return this.stone['shape'] === 'circle';
+		return this.stone ? this.stone['shape'] === 'circle' : false;
 	}
 
 	isSquare(): boolean {
-		return this.stone['shape'] === 'square';
+		return this.stone ? this.stone['shape'] === 'square' : false;
 	}
 
 	isTriangle(): boolean {
-		return this.stone['shape'] === 'triangle';
+		return this.stone ? this.stone['shape'] === 'triangle' : false;
 	}
 
 	isStar(): boolean {
-		return this.stone['shape'] === 'star';
+		return this.stone ? this.stone['shape'] === 'star' : false;
 	}
 
-	isWild():boolean {
-		return this.stone['shape'] === 'wild';
+	isWild(): boolean {
+		return this.stone ? this.stone['shape'] === 'wild' : false;
 	}
 }
