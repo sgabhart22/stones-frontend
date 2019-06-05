@@ -15,6 +15,12 @@ export class RandomStoneService {
 	}
 
 	getStone(): Stone {
+	/*
+		if(!this.deck.stones.length) {
+			this.deck = new StoneDeck();
+		}
+	*/
+
 		return this.deck.pop();
 	}
 }
