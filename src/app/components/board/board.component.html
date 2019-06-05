@@ -1,15 +1,16 @@
 <div class="section">
 <div class="container">
-<div class="content">
-<div class="columns">
-
+<div class="content columns">
 <div class="column has-text-centered">
+
+<div class="column" style="display: inline-block;">
 	<table class="table is-bordered">
 		<tbody>
 			<tr *ngFor="let row of board.cells; let i = index">
-				<td *ngFor="let col of board.cells[i]; let j = index" class="has-text-centered" 
-					(click)="getStone(i, j)" style="box-sizing: inherit; background-volor: transparent;">
-					cell
+				<td *ngFor="let col of board.cells[i]; let j = index" class="has-text-centered 
+					is-paddingless" (click)="getStone(i, j)" 
+					style="box-sizing: content-box; background-color: transparent;">
+					<app-cell></app-cell>
 				</td>
 			</tr>
 		</tbody>
