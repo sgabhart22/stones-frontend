@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { MockCellService } from '../../services/mock-cell.service';
 import { RandomStoneService } from '../../services/random-stone.service';
@@ -13,12 +13,9 @@ import { colormap } from '../../constants';
 })
 export class CellComponent implements OnInit {
 
-	public stone: Stone;
+	@Input() stone: Stone;
 
-  constructor(private rss: RandomStoneService, 
-							private mcs: MockCellService) { 
-		this.stone = this.rss.getStone();
-	}
+  constructor() { }
 
   ngOnInit() {
   }
