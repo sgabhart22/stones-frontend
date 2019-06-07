@@ -23,7 +23,10 @@ export class BoardComponent implements OnInit {
   }
 
 	getStone(x: any, y: any) {
-		console.log(this.board.getAt(x, y));
+		return this.board.getAt(x, y);
 	}
 
+	logStone(x: any, y: any) {
+		console.log(this.board.getAt(x, y));
+	}
 }
