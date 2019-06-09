@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Stone } from '../../models/stone-model';
+
+import { QueueService } from '../../services/queue.service';
+
 @Component({
   selector: 'app-queue',
   templateUrl: './queue.component.html',
@@ -7,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QueueComponent implements OnInit {
 
-  constructor() { }
+  constructor(private qs: QueueService) { }
 
   ngOnInit() {
   }
+
+	getNext(): any {
+		return this.qs.getNext();
+	}
 
 }
