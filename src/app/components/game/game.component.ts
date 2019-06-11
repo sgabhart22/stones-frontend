@@ -24,11 +24,6 @@ export class GameComponent implements OnInit {
 		for(var i: number = 0; i < 6; i++) {
 			this.queue.push(this.deck.pop());
 		}
-
-		console.log('After constructor: ' + this.queue.length);
-		this.queue.forEach(q => {
-			console.log(q);
-		});
 	}
 
   ngOnInit() {
@@ -36,7 +31,6 @@ export class GameComponent implements OnInit {
 	
 	getNext(): any {
 		let next = this.queue.pop();
-		console.log('From getNext: ' + next);
 		
 		if(this.deck.hasNext()) this.queue.push(this.deck.pop());
 
