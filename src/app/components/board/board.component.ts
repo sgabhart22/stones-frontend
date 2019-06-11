@@ -12,9 +12,7 @@ export class BoardComponent implements OnInit {
 
 	@Input() board: Board<Stone>;
 
-  constructor(board: Board<Stone>) { 
-		this.board = board;
-	}
+  constructor() { }
 
   ngOnInit() {
   }
