@@ -6,8 +6,6 @@ import { BoardService } from '../../services/board.service';
 import { Stone } from '../../models/stone-model';
 import { StoneDeck } from '../../models/stone-deck';
 
-import { QueueService } from '../../services/queue.service';
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -16,21 +14,33 @@ import { QueueService } from '../../services/queue.service';
 export class GameComponent implements OnInit {
 
 	public deck: StoneDeck;
+	public queue: Stone[];
 
-  constructor(private bs: BoardService, private qs: QueueService) { 
+  constructor(private bs: BoardService) { 
 		this.deck = new StoneDeck();
-		
+		this.queue = [];
 		this.bs.placeAFew(this.deck);
+		
 		for(var i: number = 0; i < 6; i++) {
-			this.qs.addToQueue(this.deck.pop());
+			this.queue.push(this.deck.pop());
 		}
+
+		console.log('After constructor: ' + this.queue.length);
+		this.queue.forEach(q => {
+			console.log(q);
+		});
 	}
 
   ngOnInit() {
   }
 	
 	getNext(): any {
-		return this.qs.getNext();
+		let next = this.queue.pop();
+		console.log('From getNext: ' + next);
+		
+		if(this.deck.hasNext()) this.queue.push(this.deck.pop());
+
+		return next;
 	}
 		
 }
