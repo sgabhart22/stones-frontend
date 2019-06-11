@@ -21,20 +21,20 @@ export class GameComponent implements OnInit {
 		this.queue = [];
 		this.bs.placeAFew(this.deck);
 		
+		console.log('State of deck before queue load: \n' + JSON.stringify(this.deck));
+
 		for(var i: number = 0; i < 6; i++) {
 			this.queue.push(this.deck.pop());
 		}
+
+		console.log('After queue load: \n' + JSON.stringify(this.deck));
 	}
 
   ngOnInit() {
   }
 	
-	getNext(): any {
-		let next = this.queue.pop();
-		
-		if(this.deck.hasNext()) this.queue.push(this.deck.pop());
-
-		return next;
+	getAtQueuePosition(index: number): Stone {
+		return this.queue[5 - index];
 	}
 		
 }

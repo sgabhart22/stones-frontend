@@ -5,10 +5,10 @@
 	<div class="column" style="display: inline-block;">
 		<table class="table is-bordered">
 			<tbody>
-				<tr>
+				<tr *ngFor="let q of queue; let i = index">
 					<td class="has-text-centered is-paddingless"
 							style="box-sizing: content-box">
-						<app-cell [stone]="getNext()"></app-cell>
+						<app-cell [stone]="getAtQueuePosition(i)"></app-cell>
 					</td>
 				</tr>
 			</tbody>
