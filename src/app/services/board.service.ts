@@ -13,6 +13,7 @@ export class BoardService {
 
   constructor() {
 		this.board = new Board(10, 10);
+		console.log("In BoardService constructor.");
 	}
 
 	getBoard(): Board<Stone> {

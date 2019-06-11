@@ -1,10 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Board } from '../../shared/board';
 import { Stone } from '../../models/stone-model';
-
-// import { MockBoardService } from '../../services/mock-board.service';
-import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-board',
@@ -13,10 +10,10 @@ import { BoardService } from '../../services/board.service';
 })
 export class BoardComponent implements OnInit {
 
-	public board: Board<Stone>;
+	@Input() board: Board<Stone>;
 
-  constructor(private bs: BoardService) { 
-		this.board = this.bs.getBoard();
+  constructor(board: Board<Stone>) { 
+		this.board = board;
 	}
 
   ngOnInit() {

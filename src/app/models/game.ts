@@ -3,13 +3,10 @@ import { Board } from '../shared/board';
 import { Stone } from './stone-model';
 import { StoneDeck } from './stone-deck';
 
-import { LoggerBuilder } from '../logging/config';
-
 export class Game {
   public board: Board<Stone>;
   public deck: StoneDeck;
 
-	private logger: any;
 	public available: any[];
 
   constructor() {
@@ -17,7 +14,6 @@ export class Game {
     this.deck = new StoneDeck();
 
 		this.initializeBoard();
-		this.logger = new LoggerBuilder('GameLogger').build();
   }
 
   initializeBoard() { 
@@ -94,7 +90,8 @@ export class Game {
 		return can;
 	}
 
-	log(msg: string) {
-		this.logger.debug(msg);
+	public getBoard(): Board<Stone> {
+		return this.board;
 	}
+
 }
