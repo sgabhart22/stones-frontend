@@ -55,4 +55,8 @@ export class StoneDeck {
 	push(s: Stone) {
 		this.stones.push(s);
 	}
+
+	hasNext(): boolean {
+		return this.stones.length > 0;
+	}
 }
