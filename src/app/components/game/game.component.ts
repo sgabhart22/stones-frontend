@@ -7,6 +7,7 @@ import { GameService } from '../../services/game.service';
 
 import { Stone } from '../../models/stone-model';
 import { StoneDeck } from '../../models/stone-deck';
+import { StoneService } from '../../services/stone.service';
 
 @Component({
   selector: 'app-game',
@@ -19,7 +20,8 @@ export class GameComponent implements OnInit {
 	public board: Board<Stone>;
 	public queue: Stone[];
 
-  constructor(private gs: GameService) {
+  constructor(private gs: GameService,
+							private ss: StoneService) {
 		this.board = this.gs.getBoard();
 		this.deck = new StoneDeck();
 		this.queue = [];
@@ -30,6 +32,7 @@ export class GameComponent implements OnInit {
 	}
 
   ngOnInit() {
+		this.ss.setStone(this.queue[0]);
   }
 	
 	getAtQueuePosition(index: number): Stone {

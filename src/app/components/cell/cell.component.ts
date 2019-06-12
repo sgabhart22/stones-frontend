@@ -1,10 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { MockCellService } from '../../services/mock-cell.service';
-import { RandomStoneService } from '../../services/random-stone.service';
-
 import { Stone } from '../../models/stone-model';
 import { colormap } from '../../constants';
+
+import { CellService } from '../../services/cell.service';
 
 @Component({
   selector: 'app-cell',
@@ -14,8 +13,9 @@ import { colormap } from '../../constants';
 export class CellComponent implements OnInit {
 
 	@Input() stone: Stone;
+	@Input() coords: any;
 
-  constructor() { }
+  constructor(private cs: CellService) { }
 
   ngOnInit() {
   }
@@ -46,5 +46,9 @@ export class CellComponent implements OnInit {
 
 	isWild(): boolean {
 		return this.stone ? this.stone['shape'] === 'wild' : false;
+	}
+
+	setCoords(x: number, y: number) {
+		this.cs.setLocation(this.coords);
 	}
 }
