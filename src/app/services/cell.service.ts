@@ -12,8 +12,8 @@ export class CellService {
 	constructor() { }
 
 	public setLocation(coords: Object) {
+		console.log('CellService: Received these coordinates from click: ' + JSON.stringify(coords));
+		
 		this.locationSource.next(coords);
-
-		console.log('Coordinates received in cell service: ' + JSON.stringify(coords));
 	}
 }

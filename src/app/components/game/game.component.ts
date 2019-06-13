@@ -37,7 +37,11 @@ export class GameComponent implements OnInit {
 		this.gs.isAvailable.subscribe(resp => {
 			// Point calculations from this Observable.
 
-			console.log('GameComponent: This space is available? ' + resp);
+			if(resp) {
+				console.log('GameComponent: Notified by BoardComponent that this space is available.');				
+			} else {
+				console.log('GameComponent: Notified by BoardComponent that this space is occupied.');
+			}
 		});
   }
 	

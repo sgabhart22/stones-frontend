@@ -22,11 +22,11 @@ export class BoardComponent implements OnInit {
 		this.cs.currentLocation.subscribe(coords => {
 			if(coords) {
 				if(!this.getStone(coords['x'], coords['y'])) {
-					console.log('BoardComponent: Coordinates sent from CellService indicate this is an empty cell.');
+					console.log('BoardComponent: Checked coordinates from CellService; this is an empty cell.');
 
 					this.gs.setAvailable(true);
 				} else {
-					console.log('BoardComponent: Coordinates sent from CellService indicate this cell is occupied.');
+					console.log('BoardComponent: Checked coordinates from CellService; this cell isn\'t empty.');
 					
 					this.gs.setAvailable(false);
 				}
