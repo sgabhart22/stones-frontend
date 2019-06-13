@@ -13,7 +13,7 @@ export class StoneService {
 
   constructor() { }
 
-	setStone(stone: Stone) {
+	public setStone(stone: Stone) {
 		this.stoneSource.next(stone);
 
 		console.log('Stone service received ' + JSON.stringify(stone) + ' as current stone.');
