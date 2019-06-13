@@ -33,6 +33,12 @@ export class GameComponent implements OnInit {
 
   ngOnInit() {
 		this.ss.setStone(this.queue[0]);
+
+		this.gs.isAvailable.subscribe(resp => {
+			// Point calculations from this Observable.
+
+			console.log('GameComponent: This space is available? ' + resp);
+		});
   }
 	
 	getAtQueuePosition(index: number): Stone {
