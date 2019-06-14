@@ -17,6 +17,7 @@ import { StoneService } from '../../services/stone.service';
 export class GameComponent implements OnInit {
 
 	private game: Game;
+	public queue: Stone[];
 
   constructor() {
 		this.game = new Game();
@@ -32,5 +33,9 @@ export class GameComponent implements OnInit {
 	getAtQueuePosition(index: number): Stone {
 		return this.queue[5 - index];
 	}
-		
+
+	getBoard(): Board<Stone> {
+		return this.game.getBoard();
+	}
+
 }
