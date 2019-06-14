@@ -16,14 +16,10 @@ import { StoneService } from '../../services/stone.service';
 })
 export class GameComponent implements OnInit {
 
-	public deck: StoneDeck;
-	public board: Board<Stone>;
-	public queue: Stone[];
+	private game: Game;
 
-  constructor(private gs: GameService,
-							private ss: StoneService) {
-		this.board = this.gs.getBoard();
-		this.deck = new StoneDeck();
+  constructor() {
+		this.game = new Game();
 		this.queue = [];
 
 		for(var i: number = 0; i < 6; i++) {
@@ -31,20 +27,7 @@ export class GameComponent implements OnInit {
 		}
 	}
 
-  ngOnInit() {
-
-		this.gs.isAvailable.subscribe(resp => {
-			// Point calculations from this Observable.
-			if(resp) {
-				console.log('GameComponent: Notified by BoardComponent that this space is available.');
-
-				this.ss.setStone(this.queue[0]);
-				this.queue.shift();
-			} else {
-				console.log('GameComponent: Notified by BoardComponent that this space is occupied.');
-			}
-		});
-	}
+  ngOnInit() { }
 	
 	getAtQueuePosition(index: number): Stone {
 		return this.queue[5 - index];
