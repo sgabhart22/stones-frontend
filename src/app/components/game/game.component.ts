@@ -36,6 +36,8 @@ export class GameComponent implements OnInit {
 					console.log(next + ' placed successfully.');
 					this.queue.shift();
 					this.queue.push(this.game.deck.pop());
+
+					this.checkStatus();
 				} else {
 					console.log(next + ' not placed.');
 				}
@@ -49,6 +51,14 @@ export class GameComponent implements OnInit {
 
 	getBoard(): Board<Stone> {
 		return this.game.getBoard();
+	}
+
+	private checkStatus() {
+		if(!this.game.deck.hasNext()) {
+			console.log('Winner!!!');
+		} else if(!this.game.canFit(this.queue[0])) {
+			console.log('Game over...');	
+		}
 	}
 
 }
