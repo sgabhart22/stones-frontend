@@ -37,7 +37,7 @@ export class BoardComponent implements OnInit {
 			}
 		});
 
-		this.ss.stoneSource.subscribe(stone => {
+		this.ss.currentStone.subscribe(stone => {
 			this.nextStone = stone;
 		});
   }

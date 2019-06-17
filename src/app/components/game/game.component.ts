@@ -24,7 +24,7 @@ export class GameComponent implements OnInit {
 		this.queue = [];
 
 		for(var i: number = 0; i < 6; i++) {
-			this.queue.push(this.deck.pop());
+			this.queue.push(this.game.deck.pop());
 		}
 	}
 

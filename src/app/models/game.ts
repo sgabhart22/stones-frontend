@@ -16,7 +16,7 @@ export class Game {
 		this.initializeBoard();
   }
 
-  initializeBoard() { 
+  private initializeBoard() { 
 		for(var i: number = 0; i < 6; i++) {
 			this.pickRandomCell();
 		}
@@ -37,7 +37,7 @@ export class Game {
 		return placed;
 	}
 
-	pickRandomCell(): any {
+	private pickRandomCell(): any {
 		let done: boolean = false;
 
 		while(!done) {
