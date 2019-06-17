@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { Board } from '../../shared/board';
 
-import { Game } from '../../models/game';
-import { GameService } from '../../services/game.service';
+import { CellService } from '../../services/cell.service';
 
+import { Game } from '../../models/game';
 import { Stone } from '../../models/stone-model';
 import { StoneDeck } from '../../models/stone-deck';
-import { StoneService } from '../../services/stone.service';
 
 @Component({
   selector: 'app-game',
@@ -19,7 +18,7 @@ export class GameComponent implements OnInit {
 	private game: Game;
 	public queue: Stone[];
 
-  constructor() {
+  constructor(private cs: CellService) {
 		this.game = new Game();
 		this.queue = [];
 
@@ -28,7 +27,21 @@ export class GameComponent implements OnInit {
 		}
 	}
 
-  ngOnInit() { }
+  ngOnInit() { 
+		this.cs.clickedOn.subscribe(coords => {
+			if(coords) {
+				let next = this.queue[0];
+				
+				if(this.game.setAt(coords['x'], coords['y'], next)) {
+					console.log(next + ' placed successfully.');
+					this.queue.shift();
+					this.queue.push(this.game.deck.pop());
+				} else {
+					console.log(next + ' not placed.');
+				}
+			}
+		});
+	}
 	
 	getAtQueuePosition(index: number): Stone {
 		return this.queue[5 - index];

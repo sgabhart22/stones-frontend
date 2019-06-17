@@ -7,7 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CellService {
 
 	private locationSource = new BehaviorSubject(null);
-	public currentLocation = this.locationSource.asObservable();
+	public clickedOn = this.locationSource.asObservable();
   
 	constructor() { }
 
