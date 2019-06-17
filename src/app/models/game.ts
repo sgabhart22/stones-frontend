@@ -44,7 +44,7 @@ export class Game {
 			let x: number = Math.floor(Math.random() * 10);
 			let y: number = Math.floor(Math.random() * 10);
 
-			if(!this.board.getAt(x, y)) {
+			if(!this.board.getAt(x, y) && this.board.hasNoNeighbors(x, y)) {
 				this.board.setAt(x, y, this.deck.pop());
 				done = true;
 			}

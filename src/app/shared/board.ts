@@ -67,4 +67,14 @@ export class Board<T> {
 
 		return neighbors;
 	}
+
+	hasNoNeighbors(x: any, y: any): boolean {
+		let isolated = true;
+		
+		this.getNeighbors(x, y).forEach(neighbor => {
+			if(this.getAt(neighbor['x'], neighbor['y'])) isolated = false;
+		});
+
+		return isolated;
+	}
 }
