@@ -56,7 +56,9 @@ export class GameComponent implements OnInit {
 	private checkStatus() {
 		if(!this.game.deck.hasNext()) {
 			if(this.isBoardFull()) console.log('Winner!!!');
-		} else if(!this.game.canFit(this.queue[0])) {
+		}
+		
+		if(!this.game.canFit(this.queue[0])) {
 			console.log('Game over...');	
 		}
 	}
