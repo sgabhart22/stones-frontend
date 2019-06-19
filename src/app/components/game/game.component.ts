@@ -74,4 +74,7 @@ export class GameComponent implements OnInit {
 		return filled === 84;
 	}
 
+	saveState() {
+		// TBD
+	}
 }
