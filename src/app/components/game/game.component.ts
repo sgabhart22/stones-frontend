@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Board } from '../../shared/board';
 
+import { GameService } from '../../services/game.service';
 import { CellService } from '../../services/cell.service';
 
 import { Game } from '../../models/game';
@@ -18,8 +19,9 @@ export class GameComponent implements OnInit {
 	private game: Game;
 	public queue: Stone[];
 
-  constructor(private cs: CellService) {
-		this.game = new Game();
+  constructor(private gs: GameService,
+							private cs: CellService) {
+		this.game = this.gs.getGame();
 		this.queue = [];
 
 		for(var i: number = 0; i < 6; i++) {

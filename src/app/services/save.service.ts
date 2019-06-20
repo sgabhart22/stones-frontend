@@ -14,4 +14,8 @@ export class SaveService {
 	public setState(state: string) {
 		this.stateSource.next(state);
 	}
+
+	public getState(): any {
+		return this.currentState;
+	}
 }

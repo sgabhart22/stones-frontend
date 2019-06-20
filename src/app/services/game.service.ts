@@ -17,6 +17,10 @@ export class GameService {
 		this.game = new Game();
 	}
 
+	public getGame(): any {
+		return this.game;
+	}
+
 	public getBoard(): any {
 		return this.game.getBoard();
 	}
