@@ -20,9 +20,10 @@
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
+    "ajv": "^6.10.0",
     "core-js": "^2.5.4",
+    "ngx-clipboard": "^12.1.2",
     "rxjs": "~6.3.3",
-    "write-json-file": "^4.1.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

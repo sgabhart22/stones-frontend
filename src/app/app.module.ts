@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { ClipboardModule } from 'ngx-clipboard';
+
 import { AppComponent } from './app.component';
 import { CellComponent } from './components/cell/cell.component';
 import { BoardComponent } from './components/board/board.component';
@@ -16,7 +18,8 @@ import { SaveComponent } from './components/save/save.component';
     SaveComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+		ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

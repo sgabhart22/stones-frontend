@@ -10,16 +10,23 @@ import { GameService } from '../../services/game.service';
 })
 export class SaveComponent implements OnInit {
 
+	private state: any;
+
   constructor(private ss: SaveService,
 							private gs: GameService) { }
 
   ngOnInit() { 
 		this.ss.currentState.subscribe(state => {
 			console.log('SaveComponent: state is \n' + JSON.stringify(state));
+			this.state = state;
 		});
 	}
 
 	saveState() {
 		this.ss.setState(this.gs.getBoard().getState());
+	}
+
+	getState(): any {
+		return JSON.stringify(this.state);
 	}
 }
