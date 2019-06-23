@@ -63,4 +63,13 @@ export class StoneDeck {
 	size(): number {
 		return this.stones.length;
 	}
+
+	public loadFrom(deckState: any) {
+		this.stones = [];
+
+		deckState['stones'].forEach(stone => {
+			this.stones.push(stone);
+		});
+
+	}
 }

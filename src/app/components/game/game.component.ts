@@ -61,6 +61,14 @@ export class GameComponent implements OnInit {
 
 			this.gs.setQueue(this.queue);
 		});
+
+		this.gs.wasLoaded.subscribe(loaded => {
+			if(loaded) {
+				this.game = this.gs.getGame();
+				console.log('Game after load: ' + JSON.stringify(this.game.board.getState()));
+				console.log('Deck after load: ' + JSON.stringify(this.game.deck));
+			}
+		});
 	}
 	
 	getAtQueuePosition(index: number): Stone {
@@ -98,7 +106,4 @@ export class GameComponent implements OnInit {
 		return this.game.getDeckRemaining() + this.queue.length;
 	}
 
-	saveState() {
-		// TBD
-	}
 }

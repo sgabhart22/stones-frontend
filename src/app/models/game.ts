@@ -96,4 +96,17 @@ export class Game {
 	public getDeckRemaining(): number {
 		return this.deck.size();
 	}
+
+	public loadFrom(gameState: any) {
+		this.board = new Board<Stone>(10, 10);
+		
+		let loadBoard = gameState['board'];
+		for(var i: number = 0; i < loadBoard.length; i++) {
+			for(var j: number = 0; j < loadBoard[i.toString()].length; j++) {
+				if(loadBoard[i.toString()][j] !== 'none') this.board.setAt(i, j, loadBoard[i.toString()][j]);
+			}
+		}
+
+		this.deck.loadFrom(gameState['deck']);
+	}
 }

@@ -11,6 +11,9 @@ export class GameService {
 	private availableSource = new BehaviorSubject(null);
 	public isAvailable = this.availableSource.asObservable();
 
+	private loadedSource = new BehaviorSubject(null);
+	public wasLoaded = this.loadedSource.asObservable();
+
 	public game: Game;
 	public queue: any;
 
@@ -36,5 +39,12 @@ export class GameService {
 
 	public getQueue(): any {
 		return this.queue;
+	}
+
+	public loadFromJson(state: any) {
+		this.game.loadFrom(state);
+		this.queue = state['queue'];
+
+		this.loadedSource.next(state);
 	}
 }
