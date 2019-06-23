@@ -11,7 +11,7 @@ export class SaveService {
 
   constructor() { }
 
-	public setState(state: string) {
+	public setState(state: any) {
 		this.stateSource.next(state);
 	}
 

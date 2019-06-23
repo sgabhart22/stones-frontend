@@ -28,6 +28,7 @@ export class GameComponent implements OnInit {
 			this.queue.push(this.game.deck.pop());
 		}
 
+		this.gs.setQueue(this.queue);
 		console.log(this.getRemaining() + ' stones left');
 	}
 
@@ -57,6 +58,8 @@ export class GameComponent implements OnInit {
 
 				console.log(this.getRemaining() + ' stones left');
 			}
+
+			this.gs.setQueue(this.queue);
 		});
 	}
 	

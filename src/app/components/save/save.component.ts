@@ -17,13 +17,19 @@ export class SaveComponent implements OnInit {
 
   ngOnInit() { 
 		this.ss.currentState.subscribe(state => {
-			console.log('SaveComponent: state is \n' + JSON.stringify(state));
+			console.log('SaveComponent: state is \n' + JSON.stringify(state, null, 2));
 			this.state = state;
 		});
 	}
 
 	saveState() {
-		this.ss.setState(this.gs.getBoard().getState());
+		let temp = { 'board': null, 'deck': null, 'queue': null };
+
+		temp['board'] = this.gs.getBoard().getState();
+		temp['deck'] = this.gs.getGame().deck;
+		temp['queue'] = this.gs.getQueue();
+
+		this.ss.setState(temp);
 	}
 
 	getState(): any {
