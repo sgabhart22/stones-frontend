@@ -30,7 +30,6 @@ export class Game {
 			this.board.setAt(x, y, stone);
 			placed = true;
 		} else {
-			this.deck.push(stone);
 			placed = false;
 		}
 		
@@ -94,4 +93,7 @@ export class Game {
 		return this.board;
 	}
 
+	public getDeckRemaining(): number {
+		return this.deck.size();
+	}
 }

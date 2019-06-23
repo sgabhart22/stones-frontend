@@ -12,9 +12,14 @@ export class GameService {
 	public isAvailable = this.availableSource.asObservable();
 
 	public game: Game;
+	public queue: any;
 
   constructor() { 
 		this.game = new Game();
+	}
+
+	public getGame(): any {
+		return this.game;
 	}
 
 	public getBoard(): any {
@@ -23,5 +28,13 @@ export class GameService {
 
 	public setAvailable(available: boolean) {
 		this.availableSource.next(available);
+	}
+
+	public setQueue(queue: any) {
+		this.queue = queue;
+	}
+
+	public getQueue(): any {
+		return this.queue;
 	}
 }

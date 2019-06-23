@@ -1,0 +1,12 @@
+<div class="section">
+	<div class="container">
+		<div class="content columns">
+			<div class="column has-text-centered">
+				<button (click)="saveState()">Save state</button>
+			</div>
+			<div class="column has-text-centered">
+				<button ngxClipboard [cbContent]="getState()">Copy state to clipboard</button>
+			</div>
+		</div>
+	</div>
+</div>

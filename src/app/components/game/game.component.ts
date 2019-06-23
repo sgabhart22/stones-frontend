@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Board } from '../../shared/board';
 
+import { GameService } from '../../services/game.service';
 import { CellService } from '../../services/cell.service';
 
 import { Game } from '../../models/game';
@@ -18,30 +19,47 @@ export class GameComponent implements OnInit {
 	private game: Game;
 	public queue: Stone[];
 
-  constructor(private cs: CellService) {
-		this.game = new Game();
+  constructor(private gs: GameService,
+							private cs: CellService) {
+		this.game = this.gs.getGame();
 		this.queue = [];
 
 		for(var i: number = 0; i < 6; i++) {
 			this.queue.push(this.game.deck.pop());
 		}
+
+		this.gs.setQueue(this.queue);
+		console.log(this.getRemaining() + ' stones left');
 	}
 
   ngOnInit() { 
 		this.cs.clickedOn.subscribe(coords => {
 			if(coords) {
-				let next = this.queue[0];
-				
+				console.log('Before shift (dequeue), queue looks like ' + this.queue);
+				let next = this.queue.shift();
+				console.log('Next stone is ' + JSON.stringify(next));
+				console.log('Queue now looks like ' + this.queue);
+
 				if(this.game.setAt(coords['x'], coords['y'], next)) {
 					console.log(next + ' placed successfully.');
-					this.queue.shift();
-					this.queue.push(this.game.deck.pop());
+
+					if(this.game.deck.hasNext()) {
+						this.queue.push(this.game.deck.pop());
+						console.log('After placement, queue looks like ' + this.queue);
+					}
 
 					this.checkStatus();
 				} else {
+					console.log('Putting ' + JSON.stringify(next) + ' back into queue');
+					this.queue.unshift(next);
+					console.log('Queue is ' + this.queue);
 					console.log(next + ' not placed.');
 				}
+
+				console.log(this.getRemaining() + ' stones left');
 			}
+
+			this.gs.setQueue(this.queue);
 		});
 	}
 	
@@ -76,4 +94,11 @@ export class GameComponent implements OnInit {
 		return filled === 84;
 	}
 
+	public getRemaining(): number {
+		return this.game.getDeckRemaining() + this.queue.length;
+	}
+
+	saveState() {
+		// TBD
+	}
 }
