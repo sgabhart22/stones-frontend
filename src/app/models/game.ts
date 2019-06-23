@@ -30,7 +30,6 @@ export class Game {
 			this.board.setAt(x, y, stone);
 			placed = true;
 		} else {
-			this.deck.push(stone);
 			placed = false;
 		}
 		

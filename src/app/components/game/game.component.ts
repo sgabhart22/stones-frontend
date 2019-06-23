@@ -34,18 +34,24 @@ export class GameComponent implements OnInit {
   ngOnInit() { 
 		this.cs.clickedOn.subscribe(coords => {
 			if(coords) {
+				console.log('Before shift (dequeue), queue looks like ' + this.queue);
 				let next = this.queue.shift();
+				console.log('Next stone is ' + JSON.stringify(next));
+				console.log('Queue now looks like ' + this.queue);
 
 				if(this.game.setAt(coords['x'], coords['y'], next)) {
 					console.log(next + ' placed successfully.');
 
 					if(this.game.deck.hasNext()) {
 						this.queue.push(this.game.deck.pop());
+						console.log('After placement, queue looks like ' + this.queue);
 					}
 
 					this.checkStatus();
 				} else {
-					 this.queue.unshift(next);
+					console.log('Putting ' + JSON.stringify(next) + ' back into queue');
+					this.queue.unshift(next);
+					console.log('Queue is ' + this.queue);
 					console.log(next + ' not placed.');
 				}
 
