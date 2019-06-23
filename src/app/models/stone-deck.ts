@@ -59,4 +59,8 @@ export class StoneDeck {
 	hasNext(): boolean {
 		return this.stones.length > 0;
 	}
+
+	size(): number {
+		return this.stones.length;
+	}
 }

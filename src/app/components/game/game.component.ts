@@ -27,22 +27,29 @@ export class GameComponent implements OnInit {
 		for(var i: number = 0; i < 6; i++) {
 			this.queue.push(this.game.deck.pop());
 		}
+
+		console.log(this.getRemaining() + ' stones left');
 	}
 
   ngOnInit() { 
 		this.cs.clickedOn.subscribe(coords => {
 			if(coords) {
-				let next = this.queue[0];
-				
+				let next = this.queue.shift();
+
 				if(this.game.setAt(coords['x'], coords['y'], next)) {
 					console.log(next + ' placed successfully.');
-					this.queue.shift();
-					this.queue.push(this.game.deck.pop());
+
+					if(this.game.deck.hasNext()) {
+						this.queue.push(this.game.deck.pop());
+					}
 
 					this.checkStatus();
 				} else {
+					 this.queue.unshift(next);
 					console.log(next + ' not placed.');
 				}
+
+				console.log(this.getRemaining() + ' stones left');
 			}
 		});
 	}
@@ -74,6 +81,10 @@ export class GameComponent implements OnInit {
 		}
 
 		return filled === 84;
+	}
+
+	public getRemaining(): number {
+		return this.game.getDeckRemaining() + this.queue.length;
 	}
 
 	saveState() {

@@ -94,4 +94,7 @@ export class Game {
 		return this.board;
 	}
 
+	public getDeckRemaining(): number {
+		return this.deck.size();
+	}
 }
