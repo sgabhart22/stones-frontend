@@ -65,8 +65,7 @@ export class GameComponent implements OnInit {
 		this.gs.wasLoaded.subscribe(loaded => {
 			if(loaded) {
 				this.game = this.gs.getGame();
-				console.log('Game after load: ' + JSON.stringify(this.game.board.getState()));
-				console.log('Deck after load: ' + JSON.stringify(this.game.deck));
+				this.queue = this.gs.getQueue(); 
 			}
 		});
 	}

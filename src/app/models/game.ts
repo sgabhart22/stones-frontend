@@ -101,9 +101,9 @@ export class Game {
 		this.board = new Board<Stone>(10, 10);
 		
 		let loadBoard = gameState['board'];
-		for(var i: number = 0; i < loadBoard.length; i++) {
-			for(var j: number = 0; j < loadBoard[i.toString()].length; j++) {
-				if(loadBoard[i.toString()][j] !== 'none') this.board.setAt(i, j, loadBoard[i.toString()][j]);
+		for(var i: number = 0; i < 10; i++) {
+			for(var j: number = 0; j < 10; j++) {
+				if(loadBoard[i][j] !== 'none') this.board.setAt(i, j, loadBoard[i][j]);
 			}
 		}
 

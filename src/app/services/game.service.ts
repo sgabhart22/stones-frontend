@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { Game } from '../models/game';
+import { Stone } from '../models/stone-model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class GameService {
 	public wasLoaded = this.loadedSource.asObservable();
 
 	public game: Game;
-	public queue: any;
+	public queue: Stone[];
 
   constructor() { 
 		this.game = new Game();
@@ -33,18 +34,25 @@ export class GameService {
 		this.availableSource.next(available);
 	}
 
-	public setQueue(queue: any) {
+	public setQueue(queue: Stone[]) {
 		this.queue = queue;
 	}
 
-	public getQueue(): any {
+	public getQueue(): Stone[] {
 		return this.queue;
 	}
 
 	public loadFromJson(state: any) {
+		console.log('Deck before load: ' + JSON.stringify(this.game.deck));
+		
 		this.game.loadFrom(state);
-		this.queue = state['queue'];
+		
+		this.queue = [];
+		state['queue'].forEach(stone => {
+			this.queue.push(new Stone(stone['bg'], stone['fg'], stone['shape']));
+		});
 
 		this.loadedSource.next(state);
+		console.log('Deck after load: ' + JSON.stringify(this.game.deck));
 	}
 }
