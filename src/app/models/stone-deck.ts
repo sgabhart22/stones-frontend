@@ -68,7 +68,7 @@ export class StoneDeck {
 		this.stones = [];
 
 		deckState['stones'].forEach(stone => {
-			this.stones.push(stone);
+			this.stones.push(new Stone(stone['bg'], stone['fg'], stone['shape']));
 		});
 
 	}
