@@ -36,8 +36,5 @@ export class LoadDialog {
     public dialogRef: MatDialogRef<LoadDialog>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 
 }
