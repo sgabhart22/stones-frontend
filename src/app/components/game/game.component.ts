@@ -80,6 +80,9 @@ export class GameComponent implements OnInit {
 
 	private checkStatus() {
 		if(!this.game.deck.hasNext()) {
+			if(this.queue.length < 6) {
+				this.queue.push(new Stone('empty', 'empty', 'empty'));
+			}
 			if(this.isBoardFull()) console.log('Winner!!!');
 		}
 		
