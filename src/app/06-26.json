@@ -1,0 +1,474 @@
+{
+  "board": {
+    "0": [
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "star"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "star"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "triangle"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "circle"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "circle"
+      },
+      "none",
+      "none",
+      "none",
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "triangle"
+      }
+    ],
+    "1": [
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "star"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "star"
+      },
+      "none",
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "circle"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      "none",
+      "none",
+      "none",
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "circle"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "star"
+      }
+    ],
+    "2": [
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "star"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "circle"
+      },
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "circle"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      "none",
+      "none",
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "star"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "star"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "triangle"
+      }
+    ],
+    "3": [
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "circle"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "square"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "square"
+      },
+      "none",
+      "none",
+      "none",
+      "none",
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "star"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "square"
+      }
+    ],
+    "4": [
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "square"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "square"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "square"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      "none",
+      "none",
+      "none",
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "circle"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "square"
+      }
+    ],
+    "5": [
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "square"
+      },
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "circle"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "circle"
+      },
+      "none",
+      "none",
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "square"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "triangle"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "circle"
+      },
+      {
+        "bg": "red",
+        "fg": "green",
+        "shape": "triangle"
+      }
+    ],
+    "6": [
+      "none",
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "triangle"
+      },
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "triangle"
+      },
+      "none",
+      "none",
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "square"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "triangle"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "circle"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "circle"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "triangle"
+      }
+    ],
+    "7": [
+      {
+        "bg": "black",
+        "fg": "green",
+        "shape": "triangle"
+      },
+      "none",
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "triangle"
+      },
+      "none",
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "square"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "square"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "star"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "star"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "star"
+      }
+    ],
+    "8": [
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "circle"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "star"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "triangle"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "star"
+      },
+      {
+        "bg": "green",
+        "fg": "blue",
+        "shape": "star"
+      },
+      {
+        "bg": "wild",
+        "fg": "wild",
+        "shape": "wild"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "triangle"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "square"
+      }
+    ],
+    "9": [
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "square"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "square"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "circle"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "star"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "triangle"
+      },
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "triangle"
+      },
+      "none",
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "star"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "circle"
+      },
+      {
+        "bg": "red",
+        "fg": "blue",
+        "shape": "square"
+      }
+    ]
+  },
+  "deck": {
+    "stones": [
+      {
+        "bg": "green",
+        "fg": "red",
+        "shape": "square"
+      },
+      {
+        "bg": "black",
+        "fg": "red",
+        "shape": "triangle"
+      }
+    ]
+  },
+  "queue": [
+    {
+      "bg": "black",
+      "fg": "red",
+      "shape": "triangle"
+    },
+    {
+      "bg": "red",
+      "fg": "blue",
+      "shape": "circle"
+    },
+    {
+      "bg": "red",
+      "fg": "blue",
+      "shape": "triangle"
+    },
+    {
+      "bg": "red",
+      "fg": "blue",
+      "shape": "square"
+    },
+    {
+      "bg": "green",
+      "fg": "red",
+      "shape": "circle"
+    },
+    {
+      "bg": "green",
+      "fg": "blue",
+      "shape": "star"
+    }
+  ]
+}
