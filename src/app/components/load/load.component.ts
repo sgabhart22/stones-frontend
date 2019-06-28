@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-load',
@@ -9,7 +10,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class LoadComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,
+						  private gs: GameService) { }
 
 	loadFromDialog(): void {
 		const dialogRef = this.dialog.open(LoadDialog, {
@@ -17,7 +19,8 @@ export class LoadComponent implements OnInit {
 		});
 
 		dialogRef.afterClosed().subscribe(result => {
-			console.log(result);
+			this.gs.loadFromJson(JSON.parse(result));
+
 		});
 	}
 
