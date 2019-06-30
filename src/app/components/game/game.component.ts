@@ -84,6 +84,8 @@ export class GameComponent implements OnInit {
 				this.queue.push(new Stone('empty', 'empty', 'empty'));
 			}
 			if(this.isBoardFull()) console.log('Winner!!!');
+
+			return;
 		}
 		
 		if(!this.game.canFit(this.queue[0])) {
