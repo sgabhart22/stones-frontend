@@ -15,6 +15,7 @@ import { BoardComponent } from './components/board/board.component';
 import { GameComponent } from './components/game/game.component';
 import { SaveComponent } from './components/save/save.component';
 import { LoadComponent, LoadDialog } from './components/load/load.component';
+import { GameOverComponent } from './components/game-over/game-over.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoadComponent, LoadDialog } from './components/load/load.component';
     GameComponent,
     SaveComponent,
     LoadComponent,
-		LoadDialog
+		LoadDialog,
+		GameOverComponent
   ],
   imports: [
     BrowserModule,
