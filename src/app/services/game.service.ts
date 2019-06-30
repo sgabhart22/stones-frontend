@@ -15,6 +15,9 @@ export class GameService {
 	private loadedSource = new BehaviorSubject(null);
 	public wasLoaded = this.loadedSource.asObservable();
 
+	private gameOverSource = new BehaviorSubject(null);
+	public isGameOver = this.gameOverSource.asObservable();
+
 	public game: Game;
 	public queue: Stone[];
 
@@ -32,6 +35,10 @@ export class GameService {
 
 	public setAvailable(available: boolean) {
 		this.availableSource.next(available);
+	}
+
+	public setGameOver(gameStatus: string) {
+		this.gameOverSource.next(gameStatus);
 	}
 
 	public setQueue(queue: Stone[]) {
