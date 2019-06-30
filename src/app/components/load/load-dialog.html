@@ -1,10 +1,10 @@
 <h1 mat-dialog-title>Load Game State</h1>
 <div mat-dialog-content>
-  <mat-form-field>
-		<textarea matInput placeholder="Paste state here" #state></textarea>
+  <mat-form-field style="display: block;">
+		<textarea matInput cdkFocusInitial placeholder="Paste state here" #state></textarea>
   </mat-form-field>
 </div>
 <div mat-dialog-actions align="end">
   <button mat-button color="primary" mat-dialog-close 
-		cdkFocusInitial (click)="dialogRef.close(state.value)">OK</button>
+		 (click)="dialogRef.close(state.value)">OK</button>
 </div>

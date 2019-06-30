@@ -15,7 +15,7 @@ export class LoadComponent implements OnInit {
 
 	loadFromDialog(): void {
 		const dialogRef = this.dialog.open(LoadDialog, {
-			width: '300px'
+			width: '30%'
 		});
 
 		dialogRef.afterClosed().subscribe(result => {
