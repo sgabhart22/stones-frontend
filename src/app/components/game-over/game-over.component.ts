@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { GameService } from '../../services/game.service';
 
@@ -9,12 +10,39 @@ import { GameService } from '../../services/game.service';
 })
 export class GameOverComponent implements OnInit {
 
-  constructor(private gs: GameService) { }
+	private result: string;
 
-  ngOnInit() {
-  	this.gs.isGameOver.subscribe(gameStatus => {
-			console.log('GameOverComponent received ' + gameStatus);
+  constructor(private gs: GameService,
+							public dialog: MatDialog) { }
+
+	openDialog(): void {
+		const dialogRef = this.dialog.open(GameOverDialog, {
+			width: '30%',
+			data: { 'result': this.result }
+		});
+
+		dialogRef.afterClosed().subscribe(result => {
+			console.log(result);
 		});
 	}
+  
+	ngOnInit() {
+  	this.gs.isGameOver.subscribe(gameStatus => {
+			console.log('GameOverComponent received ' + gameStatus);
+			this.result = gameStatus;
+		});
+	}
+
+}
+
+@Component({
+  selector: 'game-over-dialog',
+  templateUrl: 'game-over-dialog.html',
+})
+export class GameOverDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<GameOverDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
 }
