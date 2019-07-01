@@ -28,8 +28,12 @@ export class GameOverComponent implements OnInit {
   
 	ngOnInit() {
   	this.gs.isGameOver.subscribe(gameStatus => {
-			console.log('GameOverComponent received ' + gameStatus);
-			this.result = gameStatus;
+			if(gameStatus) {
+				console.log('GameOverComponent received ' + gameStatus);
+				this.result = gameStatus === 'win' ? 'Winner!!!' : 'Game Over...';
+
+				this.openDialog();
+			}
 		});
 	}
 

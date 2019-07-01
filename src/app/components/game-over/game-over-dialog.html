@@ -1,8 +1,9 @@
-<h1 class="title is-2 has-text-centered">Status Here...</h1>
+<h1 class="title is-2 has-text-centered">{{data.result}}</h1>
 <div mat-dialog-content style="display: inline;">
   <h3 class="subtitle is-4 has-text-centered">Info on status...</h3>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-button color="primary" mat-dialog-close
-		 (click)="dialogRef.close(state.value)">OK</button>
+	<button mat-button mat-dialog-close>Close</button>
+  <button mat-button color="primary" 
+					[mat-dialog-close]="true" cdkFocusInitial>New Game</button>
 </div>
