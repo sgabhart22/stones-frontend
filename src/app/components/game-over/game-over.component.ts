@@ -11,6 +11,7 @@ import { GameService } from '../../services/game.service';
 export class GameOverComponent implements OnInit {
 
 	private result: string;
+	private detail: string;
 
   constructor(private gs: GameService,
 							public dialog: MatDialog) { }
@@ -18,7 +19,8 @@ export class GameOverComponent implements OnInit {
 	openDialog(): void {
 		const dialogRef = this.dialog.open(GameOverDialog, {
 			width: '30%',
-			data: { 'result': this.result }
+			data: { 'result': this.result,
+							'detail': this.detail }
 		});
 
 		dialogRef.afterClosed().subscribe(result => {
@@ -30,7 +32,13 @@ export class GameOverComponent implements OnInit {
   	this.gs.isGameOver.subscribe(gameStatus => {
 			if(gameStatus) {
 				console.log('GameOverComponent received ' + gameStatus);
-				this.result = gameStatus === 'win' ? 'Winner!!!' : 'Game Over...';
+				if(gameStatus === 'win') {
+					this.result = 'Winner!!!';
+					this.detail = 'Congratulations, you placed all the Stones!';
+				} else {
+					this.result = 'Game Over...';
+					this.detail = 'The next Stone will not fit on the Board.';
+				}
 
 				this.openDialog();
 			}
