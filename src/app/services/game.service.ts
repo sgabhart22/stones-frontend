@@ -62,4 +62,8 @@ export class GameService {
 		this.loadedSource.next(state);
 		console.log('Deck after load: ' + JSON.stringify(this.game.deck));
 	}
+
+	public newGame() {
+		this.game = new Game();
+	}
 }
