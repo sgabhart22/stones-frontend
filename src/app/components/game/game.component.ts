@@ -122,7 +122,13 @@ export class GameComponent implements OnInit {
 	}
 
 	public getRemaining(): number {
-		return this.game.getDeckRemaining() + this.queue.length;
-	}
+		let rem: number = this.game.getDeckRemaining();
+		
+		this.queue.forEach(stone => {
+			if(stone['bg'] !== 'empty') rem++;
+		});
 
+		return rem;
+	}
 }
+
