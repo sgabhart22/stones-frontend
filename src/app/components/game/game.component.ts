@@ -16,11 +16,16 @@ import { StoneDeck } from '../../models/stone-deck';
 })
 export class GameComponent implements OnInit {
 
+	// TODO: Move queue into Game model
 	private game: Game;
 	public queue: Stone[];
 
   constructor(private gs: GameService,
 							private cs: CellService) {
+		this.initialize();
+	}
+
+	private initialize() {
 		this.game = this.gs.getGame();
 		this.queue = [];
 
@@ -29,7 +34,7 @@ export class GameComponent implements OnInit {
 		}
 
 		this.gs.setQueue(this.queue);
-		console.log(this.getRemaining() + ' stones left');
+		console.log(this.getRemaining() + ' stones left');	
 	}
 
   ngOnInit() { 
@@ -70,7 +75,9 @@ export class GameComponent implements OnInit {
 		});
 
 		this.gs.isNewGame.subscribe(newGame => {
-			if(newGame) this.game = this.gs.getGame();
+			if(newGame) {
+				this.initialize();
+			}
 		});
 	}
 	
@@ -100,6 +107,7 @@ export class GameComponent implements OnInit {
 		}
 	}
 
+	// TODO: Factor these loops out by adding getter to Board for current number of occupants.
 	private isBoardFull(): boolean {
 		let filled: number = 0;
 		let board: Board<Stone> = this.getBoard();
