@@ -40,8 +40,8 @@ export class Game {
 		let done: boolean = false;
 
 		while(!done) {
-			let x: number = Math.floor(Math.random() * 10);
-			let y: number = Math.floor(Math.random() * 10);
+			let x: number = Math.floor(Math.random() * 8) + 1;
+			let y: number = Math.floor(Math.random() * 8) + 1;
 
 			if(!this.board.getAt(x, y) && this.board.hasNoNeighbors(x, y)) {
 				this.board.setAt(x, y, this.deck.pop());
