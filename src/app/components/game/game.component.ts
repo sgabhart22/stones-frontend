@@ -68,6 +68,10 @@ export class GameComponent implements OnInit {
 				this.queue = this.gs.getQueue(); 
 			}
 		});
+
+		this.gs.isNewGame.subscribe(newGame => {
+			if(newGame) this.game = this.gs.getGame();
+		});
 	}
 	
 	getAtQueuePosition(index: number): Stone {

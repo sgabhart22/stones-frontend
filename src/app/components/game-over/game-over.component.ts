@@ -24,7 +24,10 @@ export class GameOverComponent implements OnInit {
 		});
 
 		dialogRef.afterClosed().subscribe(result => {
-			if(result) this.gs.newGame();
+			if(result) {
+				this.gs.newGame();
+				this.gs.setNewGame(true);
+			}
 		});
 	}
   

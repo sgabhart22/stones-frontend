@@ -18,6 +18,9 @@ export class GameService {
 	private gameOverSource = new BehaviorSubject(null);
 	public isGameOver = this.gameOverSource.asObservable();
 
+	private newGameSource = new BehaviorSubject(null);
+	public isNewGame = this.newGameSource.asObservable();
+
 	public game: Game;
 	public queue: Stone[];
 
@@ -39,6 +42,10 @@ export class GameService {
 
 	public setGameOver(gameStatus: string) {
 		this.gameOverSource.next(gameStatus);
+	}
+
+	public setNewGame(newGame: boolean) {
+		this.newGameSource.next(newGame);
 	}
 
 	public setQueue(queue: Stone[]) {
