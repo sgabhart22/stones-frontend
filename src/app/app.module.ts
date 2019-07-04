@@ -16,6 +16,7 @@ import { GameComponent } from './components/game/game.component';
 import { SaveComponent } from './components/save/save.component';
 import { LoadComponent, LoadDialog } from './components/load/load.component';
 import { GameOverComponent, GameOverDialog } from './components/game-over/game-over.component';
+import { StatusBarComponent } from './components/status-bar/status-bar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { GameOverComponent, GameOverDialog } from './components/game-over/game-o
     LoadComponent,
 		LoadDialog,
 		GameOverComponent,
-		GameOverDialog
+		GameOverDialog,
+		StatusBarComponent
   ],
   imports: [
     BrowserModule,
