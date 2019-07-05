@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GameService } from '../../services/game.service';
+
 @Component({
   selector: 'app-status-bar',
   templateUrl: './status-bar.component.html',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatusBarComponent implements OnInit {
 
-  constructor() { }
+	private remainingStones: number;
+
+  constructor(private gs: GameService) { }
 
   ngOnInit() {
+		this.gs.remaining.subscribe(remaining => {
+			if(remaining) {
+				this.remainingStones = remaining;
+			}
+		});
   }
+
+	getRemaining(): number {
+		return this.remainingStones;
+	}
 
 }
