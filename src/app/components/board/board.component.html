@@ -1,11 +1,11 @@
 <div class="column" style="display: inline-block;">
 	<table class="table is-bordered">
 		<tbody>
-			<tr *ngFor="let row of board.cells; let i = index">
+			<tr *ngFor="let row of board.cells; let i = index" class="mat-elevation-z1">
 				<td *ngFor="let col of board.cells[i]; let j = index" class="has-text-centered 
 					is-paddingless" (click)="logStone(i, j)" 
 					style="box-sizing: content-box; background-color: transparent;">
-					<app-cell [stone]="getStone(i, j)" [coords]="{'x': i, 'y': j}"></app-cell>
+					<app-cell [stone]="getStone(i, j)" [coords]="{'x': i, 'y': j}" class="mat-elevation-z2"></app-cell>
 				</td>
 			</tr>
 		</tbody>
