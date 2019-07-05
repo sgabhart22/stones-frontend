@@ -34,7 +34,7 @@ export class GameComponent implements OnInit {
 		}
 
 		this.gs.setQueue(this.queue);
-		console.log(this.getRemaining() + ' stones left');	
+		this.gs.setRemaining(this.getRemaining());
 	}
 
   ngOnInit() { 
@@ -61,7 +61,7 @@ export class GameComponent implements OnInit {
 					console.log(next + ' not placed.');
 				}
 
-				console.log(this.getRemaining() + ' stones left');
+				this.gs.setRemaining(this.getRemaining());
 			}
 
 			this.gs.setQueue(this.queue);
