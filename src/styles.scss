@@ -1,3 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '@material/top-app-bar/mdc-top-app-bar.scss';
+
+app-status-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+
+.column {
+	margin-top: 1rem;
+}
