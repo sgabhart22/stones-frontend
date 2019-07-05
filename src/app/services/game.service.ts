@@ -21,6 +21,9 @@ export class GameService {
 	private newGameSource = new BehaviorSubject(null);
 	public isNewGame = this.newGameSource.asObservable();
 
+	private remainingSource = new BehaviorSubject(null);
+	public remaining = this.remainingSource.asObservable();
+
 	public game: Game;
 	public queue: Stone[];
 
@@ -54,6 +57,11 @@ export class GameService {
 
 	public getQueue(): Stone[] {
 		return this.queue;
+	}
+
+	public setRemaining(remaining: number) {
+		this.remainingSource.next(remaining);
+		console.log('Remaining, from GameService: ' + remaining);
 	}
 
 	public loadFromJson(state: any) {
