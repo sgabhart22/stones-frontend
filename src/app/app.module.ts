@@ -7,7 +7,8 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { MatDialogModule,
 					MatFormFieldModule,
 					MatInputModule,
-					MatButtonModule } from '@angular/material';
+					MatButtonModule,
+					MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { CellComponent } from './components/cell/cell.component';
@@ -38,6 +39,7 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
 		MatFormFieldModule,
 		MatInputModule,
 		MatButtonModule,
+		MatToolbarModule,
 		BrowserAnimationsModule
   ],
   providers: [],
