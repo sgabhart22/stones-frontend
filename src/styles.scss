@@ -8,15 +8,15 @@ app-status-bar {
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 10;
 }
 
 table {
-	@include mat-elevation(1);
+	@include mat-elevation(2);
 }
 
-app-cell {
-	@include mat-elevation(2);
+.item {
+	@include mat-elevation(4);
 }
 
 .column {
