@@ -17,6 +17,8 @@ export class StatusBarComponent implements OnInit {
 		this.gs.remaining.subscribe(remaining => {
 			if(remaining) {
 				this.remainingStones = remaining;
+			} else {
+				this.remainingStones = 0;
 			}
 		});
   }
