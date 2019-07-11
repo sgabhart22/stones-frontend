@@ -8,6 +8,7 @@ export class Game {
   public deck: StoneDeck;
 
 	public available: any[];
+	private matchDefs = {};
 
   constructor() {
     this.board = new Board<Stone>(10, 10);
@@ -28,6 +29,8 @@ export class Game {
 		// if neighbors agree
 		if(this.checkNeighbors(x, y, stone) && !this.board.getAt(x, y)) {	
 			this.board.setAt(x, y, stone);
+			console.log('Placed stone, ' + stone + ' matched as ' + stone.matchClass);
+			console.log('Match descriptions look like this: ' + JSON.stringify(this.matchDefs));
 			placed = true;
 		} else {
 			placed = false;
@@ -52,6 +55,8 @@ export class Game {
 	}
 
 	checkNeighbors(x: number, y: number, stone: Stone): boolean {
+		this.matchDefs = { 'classA': 0, 'classB': 0 };
+		
 		let fits = true;
 		let allEmpty: boolean = true;
 
@@ -62,6 +67,8 @@ export class Game {
 			if(cmp) {		
 				if(!stone.matches(cmp)) {
 					fits = false;
+				} else {
+					this.matchDefs[stone.matchClass]++;
 				}
 				allEmpty = false;
 			}
