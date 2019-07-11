@@ -24,6 +24,9 @@ export class GameService {
 	private remainingSource = new BehaviorSubject(null);
 	public remaining = this.remainingSource.asObservable();
 
+	private scoreSource = new BehaviorSubject(null);
+	public score = this.scoreSource.asObservable();
+
 	public game: Game;
 	public queue: Stone[];
 
@@ -49,6 +52,10 @@ export class GameService {
 
 	public setNewGame(newGame: boolean) {
 		this.newGameSource.next(newGame);
+	}
+
+	public setScore(score: number) {
+		this.scoreSource.next(score);
 	}
 
 	public setQueue(queue: Stone[]) {
