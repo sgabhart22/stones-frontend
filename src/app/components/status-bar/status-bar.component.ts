@@ -10,6 +10,7 @@ import { GameService } from '../../services/game.service';
 export class StatusBarComponent implements OnInit {
 
 	private remainingStones: number;
+	private gameScore: number;
 
   constructor(private gs: GameService) { }
 
@@ -21,10 +22,22 @@ export class StatusBarComponent implements OnInit {
 				this.remainingStones = 0;
 			}
 		});
+
+		this.gs.score.subscribe(score => {
+			if(score) {
+				this.gameScore = score;
+			} else {
+				this.gameScore = 0;
+			}
+		});
   }
 
 	getRemaining(): number {
 		return this.remainingStones;
+	}
+
+	getScore(): number {
+		return this.gameScore;
 	}
 
 }
