@@ -3,16 +3,20 @@ import { Board } from '../shared/board';
 import { Stone } from './stone-model';
 import { StoneDeck } from './stone-deck';
 
+import { calcScore } from '../constants';
+
 export class Game {
   public board: Board<Stone>;
   public deck: StoneDeck;
 
 	public available: any[];
+	public score: number;
 	private matchDefs = {};
 
   constructor() {
     this.board = new Board<Stone>(10, 10);
     this.deck = new StoneDeck();
+		this.score = 0;
 
 		this.initializeBoard();
   }
@@ -29,8 +33,7 @@ export class Game {
 		// if neighbors agree
 		if(this.checkNeighbors(x, y, stone) && !this.board.getAt(x, y)) {	
 			this.board.setAt(x, y, stone);
-			console.log('Placed stone, ' + stone + ' matched as ' + stone.matchClass);
-			console.log('Match descriptions look like this: ' + JSON.stringify(this.matchDefs));
+			this.score += calcScore(this.matchDefs);
 			placed = true;
 		} else {
 			placed = false;
