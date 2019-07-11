@@ -35,6 +35,7 @@ export class GameComponent implements OnInit {
 
 		this.gs.setQueue(this.queue);
 		this.gs.setRemaining(this.getRemaining());
+		this.gs.setScore(0);
 	}
 
   ngOnInit() { 
