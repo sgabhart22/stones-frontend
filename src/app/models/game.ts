@@ -1,8 +1,6 @@
 import { Board } from '../shared/board';
-
 import { Stone } from './stone-model';
 import { StoneDeck } from './stone-deck';
-
 import { calcScore } from '../constants';
 
 export class Game {
