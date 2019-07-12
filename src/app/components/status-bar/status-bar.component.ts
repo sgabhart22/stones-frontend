@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SimpleTimer } from 'ng2-simple-timer';
 
 import { GameService } from '../../services/game.service';
 
@@ -14,11 +13,7 @@ export class StatusBarComponent implements OnInit {
 	private gameScore: number;
 	private gameClock: number;
 
-  constructor(private gs: GameService, 
-							private st: SimpleTimer) { 
-		this.st.newTimer('clock', 1, true);
-		this.gameClock = 0;
-	}
+  constructor(private gs: GameService) { }
 
   ngOnInit() {
 		this.gs.remaining.subscribe(remaining => {
@@ -37,13 +32,13 @@ export class StatusBarComponent implements OnInit {
 			}
 		});
 
-		this.gs.isGameOver.subscribe(gameOver => {
-			if(gameOver) {
-				let res = this.st.unsubscribe(this.st.getSubscription()[0]);
+		this.gs.time.subscribe(time => {
+			if(time) {
+				this.gameClock = time;
+			} else {
+				this.gameClock = 0;
 			}
 		});
-
-		this.st.subscribe('clock', () => this.count());
   }
 
 	getRemaining(): number {
@@ -57,8 +52,5 @@ export class StatusBarComponent implements OnInit {
 	getClock(): number {
 		return this.gameClock;
 	}
-
-	private count() {
-		this.gameClock++;
-	}
 }
+
