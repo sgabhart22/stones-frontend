@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SimpleTimer } from 'ng2-simple-timer';
 
 import { Board } from '../../shared/board';
 import { Game } from '../../models/game';
@@ -17,15 +18,18 @@ export class GameComponent implements OnInit {
 	// TODO: Move queue into Game model
 	private game: Game;
 	public queue: Stone[];
+	public gameClock: number;
 
   constructor(private gs: GameService,
-							private cs: CellService) {
+							private cs: CellService,
+						  private st: SimpleTimer) {
 		this.initialize();
 	}
 
 	private initialize() {
 		this.game = this.gs.getGame();
 		this.queue = [];
+		this.gameClock = 0;
 
 		for(var i: number = 0; i < 6; i++) {
 			this.queue.push(this.game.deck.pop());
@@ -34,6 +38,14 @@ export class GameComponent implements OnInit {
 		this.gs.setQueue(this.queue);
 		this.gs.setRemaining(this.getRemaining());
 		this.gs.setScore(0);
+
+		this.initializeTimer();
+	}
+
+	private initializeTimer() {
+		this.gs.setTime(this.gameClock);
+		console.log('New Timer? ' + this.st.newTimer('clock', 1, true));
+		console.log('Subscribed? ' + this.st.subscribe('clock', () => this.tick()));	
 	}
 
   ngOnInit() { 
@@ -76,9 +88,18 @@ export class GameComponent implements OnInit {
 
 		this.gs.isNewGame.subscribe(newGame => {
 			if(newGame) {
+				this.st.unsubscribe(this.st.getSubscription()[0]);
 				this.initialize();
 			}
 		});
+
+		this.gs.isGameOver.subscribe(gameOver => {
+			if(gameOver) {
+				console.log('Game over received in Game component.');
+				console.log('Deleted timer? ' + this.st.delTimer('clock'));
+			}
+		});
+
 	}
 	
 	getAtQueuePosition(index: number): Stone {
@@ -129,6 +150,11 @@ export class GameComponent implements OnInit {
 		});
 
 		return rem;
+	}
+
+	private tick() {
+		this.gameClock++;
+		this.gs.setTime(this.gameClock);
 	}
 }
 
