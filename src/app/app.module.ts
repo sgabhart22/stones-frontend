@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { ClipboardModule } from 'ngx-clipboard';
+import { SimpleTimer } from 'ng2-simple-timer';
 
 import { MatDialogModule,
 					MatFormFieldModule,
@@ -42,7 +43,9 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
 		MatToolbarModule,
 		BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+		SimpleTimer
+	],
 	entryComponents: [LoadDialog,
 										GameOverDialog],
   bootstrap: [AppComponent]
