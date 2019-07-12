@@ -27,6 +27,9 @@ export class GameService {
 	private scoreSource = new BehaviorSubject(null);
 	public score = this.scoreSource.asObservable();
 
+	private timeSource = new BehaviorSubject(null);
+	public time = this.timeSource.asObservable();
+
 	public game: Game;
 	public queue: Stone[];
 
@@ -68,7 +71,10 @@ export class GameService {
 
 	public setRemaining(remaining: number) {
 		this.remainingSource.next(remaining);
-		console.log('Remaining, from GameService: ' + remaining);
+	}
+
+	public setTime(time: number) {
+		this.timeSource.next(time);
 	}
 
 	public loadFromJson(state: any) {
