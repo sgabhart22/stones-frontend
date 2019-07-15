@@ -1,5 +1,7 @@
 <mat-toolbar color="primary">
-	<div class="header-item">{{getScore()}} points</div>
-	<div class="header-item">{{getRemaining()}} left</div>
-	<div class="header-item">Time: {{getClock()}}</div>
+	<mat-toolbar-row class="mat-toolbar-single-row">
+		<div class="header-item">{{getScore()}} points</div>
+		<div class="header-item">{{getRemaining()}} left</div>
+		<div class="header-item">Time: {{getClock()}}</div>
+	</mat-toolbar-row>
 </mat-toolbar>
