@@ -3,6 +3,7 @@ mat-toolbar {
 }
 
 mat-toolbar-row {
+	display: flex;
 	justify-content: space-between;
 }
 
@@ -11,8 +12,8 @@ mat-toolbar-row {
 }
 
 .header-item {
-	display: flex;
-	display: 1 1 auto;
+	flex: 1 1 6rem;
+	text-align: center;
 	font: 500 1rem/32px Roboto,"Helvetica Neue",sans-serif;
 }
 
