@@ -58,7 +58,6 @@ export class GameComponent implements OnInit {
 
 				if(this.game.setAt(coords['x'], coords['y'], next)) {
 					console.log(next + ' placed successfully.');
-					this.gs.setScore(this.game.score);
 
 					if(this.game.deck.hasNext()) {
 						this.queue.push(this.game.deck.pop());
@@ -73,6 +72,7 @@ export class GameComponent implements OnInit {
 					console.log(next + ' not placed.');
 				}
 
+				this.gs.setScore(this.game.score);
 				this.gs.setRemaining(this.getRemaining());
 			}
 
