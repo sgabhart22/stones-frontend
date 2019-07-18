@@ -34,6 +34,11 @@ export class Game {
 			this.score += calcScore(this.matchDefs);
 			placed = true;
 		} else {
+			if(this.score > 1) {
+				this.score -= 2;
+			} else {
+				this.score = 0;
+			}
 			placed = false;
 		}
 		
