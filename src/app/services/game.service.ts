@@ -34,7 +34,7 @@ export class GameService {
 	public queue: Stone[];
 
   constructor() { 
-		this.game = new Game();
+		this.newGame();
 	}
 
 	public getGame(): any {

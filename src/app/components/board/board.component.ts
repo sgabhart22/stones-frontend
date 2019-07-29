@@ -17,7 +17,13 @@ export class BoardComponent implements OnInit {
 		this.board = this.gs.getBoard();
 	}
 
-  ngOnInit() { }
+  ngOnInit() { 
+		this.gs.isNewGame.subscribe(newGame => {
+			if(newGame) {
+				this.board = this.gs.getBoard();
+			}
+		});
+	}
 
 	getStone(x: any, y: any) {
 		return this.board.getAt(x, y);
