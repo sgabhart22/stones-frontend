@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { Board } from '../../shared/board';
 import { Stone } from '../../models/stone-model';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-board',
@@ -10,10 +11,11 @@ import { Stone } from '../../models/stone-model';
 })
 export class BoardComponent implements OnInit {
 
-	@Input() board: Board<Stone>;
-	private nextStone: Stone;
+	private board: Board<Stone>;
 
-  constructor() { }
+  constructor(private gs: GameService) { 
+		this.board = this.gs.getBoard();
+	}
 
   ngOnInit() { }
 
