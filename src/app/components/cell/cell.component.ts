@@ -4,6 +4,7 @@ import { Stone } from '../../models/stone-model';
 import { colormap } from '../../constants';
 
 import { CellService } from '../../services/cell.service';
+import { GameService } from '../../services/game.service';
 
 @Component({
   selector: 'app-cell',
@@ -12,13 +13,22 @@ import { CellService } from '../../services/cell.service';
 })
 export class CellComponent implements OnInit {
 
-	@Input() stone: Stone;
 	@Input() coords: any;
+	public stone: Stone;
 
-  constructor(private cs: CellService) { }
+  constructor(private cs: CellService,
+							private gs: GameService) { 
+		// Instantiated every placement.
+	}
 
   ngOnInit() {
-  }
+		if(this.coords) {
+			this.stone = this.gs.getBoard().cells[this.coords['x']][this.coords['y']].getMember();
+			console.log('coords ' + JSON.stringify(this.coords) + ' has ' + JSON.stringify(this.stone));
+		} else {
+			
+		}
+	}
 
 	getBg(): string {
 		return this.stone ? colormap['bg'][this.stone['bg']] : 'transparent';
