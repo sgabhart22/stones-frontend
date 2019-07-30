@@ -77,6 +77,7 @@ export class GameComponent implements OnInit {
 			}
 
 			this.gs.setQueue(this.queue);
+			console.log(this.gs.getBoard().getOccupants());
 		});
 
 		this.gs.wasLoaded.subscribe(loaded => {
@@ -107,7 +108,7 @@ export class GameComponent implements OnInit {
 	}
 
 	getBoard(): Board<Stone> {
-		return this.game.getBoard();
+		return this.gs.getBoard();
 	}
 
 	private checkStatus() {
@@ -130,16 +131,7 @@ export class GameComponent implements OnInit {
 
 	// TODO: Factor these loops out by adding getter to Board for current number of occupants.
 	private isBoardFull(): boolean {
-		let filled: number = 0;
-		let board: Board<Stone> = this.getBoard();
-
-		for(var i: number = 0; i < board.cells.length; i++) {
-			for(var j: number = 0; j < board.cells[0].length; j++) {
-				if(board.getAt(i, j)) filled++;
-			}
-		}
-
-		return filled === 84;
+		return this.gs.getBoard().getOccupants() === 84;
 	}
 
 	public getRemaining(): number {
