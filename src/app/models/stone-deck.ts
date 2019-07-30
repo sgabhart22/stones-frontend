@@ -14,12 +14,12 @@ export class StoneDeck {
   buildDeck() {
     let shapes = ['circle', 'triangle', 'square', 'star'];
     let pairings = [
-      {'bg': 'black', 'fg': 'red'},
-      {'bg': 'black', 'fg': 'green'},
-      {'bg': 'red', 'fg': 'green'},
-      {'bg': 'red', 'fg': 'blue'},
-      {'bg': 'green', 'fg': 'blue'},
-      {'bg': 'green', 'fg': 'red'}
+      {'bg': 'black', 'fg': 'purple'},
+      {'bg': 'black', 'fg': 'yellow'},
+      {'bg': 'purple', 'fg': 'yellow'},
+      {'bg': 'purple', 'fg': 'white'},
+      {'bg': 'yellow', 'fg': 'white'},
+      {'bg': 'yellow', 'fg': 'purple'}
     ];
     
     pairings.forEach(pairing => {
