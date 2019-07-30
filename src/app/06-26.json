@@ -3,17 +3,17 @@
     "0": [
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "star"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "star"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "triangle"
       },
       {
@@ -22,39 +22,39 @@
         "shape": "wild"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "circle"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "circle"
       },
       "none",
       "none",
       "none",
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "triangle"
       }
     ],
     "1": [
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "star"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "star"
       },
       "none",
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "circle"
       },
       {
@@ -66,30 +66,30 @@
       "none",
       "none",
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "circle"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "star"
       }
     ],
     "2": [
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "star"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "circle"
       },
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "circle"
       },
       {
@@ -101,7 +101,7 @@
       "none",
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "star"
       },
       {
@@ -110,25 +110,25 @@
         "shape": "wild"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "star"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "triangle"
       }
     ],
     "3": [
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "circle"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "square"
       },
       {
@@ -137,8 +137,8 @@
         "shape": "wild"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "square"
       },
       "none",
@@ -146,13 +146,13 @@
       "none",
       "none",
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "star"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "square"
       }
     ],
@@ -164,17 +164,17 @@
       },
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "square"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "square"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "square"
       },
       {
@@ -186,42 +186,42 @@
       "none",
       "none",
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "circle"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "square"
       }
     ],
     "5": [
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "square"
       },
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "circle"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "circle"
       },
       "none",
       "none",
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "square"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "triangle"
       },
       {
@@ -230,13 +230,13 @@
         "shape": "wild"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "circle"
       },
       {
-        "bg": "red",
-        "fg": "green",
+        "bg": "purple",
+        "fg": "yellow",
         "shape": "triangle"
       }
     ],
@@ -244,46 +244,46 @@
       "none",
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "triangle"
       },
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "triangle"
       },
       "none",
       "none",
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "square"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "triangle"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "circle"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "circle"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "triangle"
       }
     ],
     "7": [
       {
         "bg": "black",
-        "fg": "green",
+        "fg": "yellow",
         "shape": "triangle"
       },
       "none",
@@ -293,34 +293,34 @@
         "shape": "wild"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "triangle"
       },
       "none",
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "square"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "square"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "star"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "star"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "star"
       }
     ],
@@ -331,18 +331,18 @@
         "shape": "wild"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "circle"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "star"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "triangle"
       },
       {
@@ -351,13 +351,13 @@
         "shape": "wild"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "star"
       },
       {
-        "bg": "green",
-        "fg": "blue",
+        "bg": "yellow",
+        "fg": "white",
         "shape": "star"
       },
       {
@@ -366,61 +366,61 @@
         "shape": "wild"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "triangle"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "square"
       }
     ],
     "9": [
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "square"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "square"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "circle"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "star"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "triangle"
       },
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "triangle"
       },
       "none",
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "star"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "circle"
       },
       {
-        "bg": "red",
-        "fg": "blue",
+        "bg": "purple",
+        "fg": "white",
         "shape": "square"
       }
     ]
@@ -428,13 +428,13 @@
   "deck": {
     "stones": [
       {
-        "bg": "green",
-        "fg": "red",
+        "bg": "yellow",
+        "fg": "purple",
         "shape": "square"
       },
       {
         "bg": "black",
-        "fg": "red",
+        "fg": "purple",
         "shape": "triangle"
       }
     ]
@@ -442,32 +442,32 @@
   "queue": [
     {
       "bg": "black",
-      "fg": "red",
+      "fg": "purple",
       "shape": "triangle"
     },
     {
-      "bg": "red",
-      "fg": "blue",
+      "bg": "purple",
+      "fg": "white",
       "shape": "circle"
     },
     {
-      "bg": "red",
-      "fg": "blue",
+      "bg": "purple",
+      "fg": "white",
       "shape": "triangle"
     },
     {
-      "bg": "red",
-      "fg": "blue",
+      "bg": "purple",
+      "fg": "white",
       "shape": "square"
     },
     {
-      "bg": "green",
-      "fg": "red",
+      "bg": "yellow",
+      "fg": "purple",
       "shape": "circle"
     },
     {
-      "bg": "green",
-      "fg": "blue",
+      "bg": "yellow",
+      "fg": "white",
       "shape": "star"
     }
   ]
