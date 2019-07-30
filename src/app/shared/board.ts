@@ -6,12 +6,15 @@ export class Board<T> {
 
   cells: Cell<T>[][];
 	state: any;
+	
+	occupants: number;
 
   constructor(r: number, c: number) { 
     this.rows = r;
     this.columns = c;
     this.cells = [];
 		this.state = {};
+		this.occupants = 0;
 
     for(var i: number = 0; i < this.rows; i++) {
     this.cells[i] = [];
@@ -35,6 +38,8 @@ export class Board<T> {
     if(!this.cells[x][y].getMember()) {
 			this.cells[x][y].setMember(piece);
 			this.state[x][y] = piece;
+
+			this.occupants++;
 		}
   }
 
@@ -76,5 +81,9 @@ export class Board<T> {
 		});
 
 		return isolated;
+	}
+
+	getOccupants(): number {
+		return this.occupants;
 	}
 }
