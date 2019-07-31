@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 import { Stone } from '../../models/stone-model';
 import { colormap } from '../../constants';
@@ -15,7 +15,15 @@ export class CellComponent implements OnInit {
 	@Input() stone: Stone;
 	@Input() coords: any;
 
-  constructor(private cs: CellService) { }
+  constructor(private cs: CellService) { 
+		console.log('Cell constructor.');
+	}
+
+	ngOnChanges() {
+		if(this.stone && this.coords) {
+			// Consider fade animation
+		}
+	}
 
   ngOnInit() {
   }

@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChildren, QueryList, OnChanges } from '@angular/core';
 
+import { Cell } from '../../shared/cell';
 import { Board } from '../../shared/board';
 import { Stone } from '../../models/stone-model';
 
@@ -8,14 +9,18 @@ import { Stone } from '../../models/stone-model';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent implements OnInit, OnChanges {
 
 	@Input() board: Board<Stone>;
-	private nextStone: Stone;
+	@ViewChildren(Cell) cells !: QueryList<Cell<Stone>>;
 
   constructor() { }
 
   ngOnInit() { }
+
+	ngOnChanges() {
+		console.log('OnChanges, Board has ' + this.cells.length + ' children');
+	}
 
 	getStone(x: any, y: any) {
 		return this.board.getAt(x, y);

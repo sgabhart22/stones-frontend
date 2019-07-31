@@ -44,8 +44,6 @@ export class GameComponent implements OnInit {
 
 	private initializeTimer() {
 		this.gs.setTime(this.gameClock);
-		console.log('New Timer? ' + this.st.newTimer('clock', 1, true));
-		console.log('Subscribed? ' + this.st.subscribe('clock', () => this.tick()));	
 	}
 
   ngOnInit() { 
@@ -129,7 +127,6 @@ export class GameComponent implements OnInit {
 		}
 	}
 
-	// TODO: Factor these loops out by adding getter to Board for current number of occupants.
 	private isBoardFull(): boolean {
 		return this.gs.getBoard().getOccupants() === 84;
 	}
