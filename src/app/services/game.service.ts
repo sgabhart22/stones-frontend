@@ -30,6 +30,9 @@ export class GameService {
 	private timeSource = new BehaviorSubject(null);
 	public time = this.timeSource.asObservable();
 
+	private placedSource = new BehaviorSubject<Stone>(null);
+	public placed = this.placedSource.asObservable();
+
 	public game: Game;
 	public queue: Stone[];
 
@@ -75,6 +78,10 @@ export class GameService {
 
 	public setTime(time: number) {
 		this.timeSource.next(time);
+	}
+
+	public setPlaced(nextStone: Stone) {
+		this.placedSource.next(nextStone);
 	}
 
 	public loadFromJson(state: any) {
