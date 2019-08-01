@@ -4,6 +4,8 @@ import { Cell } from '../../shared/cell';
 import { Board } from '../../shared/board';
 import { Stone } from '../../models/stone-model';
 
+import { GameService } from '../../services/game.service';
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -11,15 +13,32 @@ import { Stone } from '../../models/stone-model';
 })
 export class BoardComponent implements OnInit, OnChanges {
 
-	@Input() board: Board<Stone>;
+	public board: Board<Stone>;
 	@ViewChildren(Cell) cells !: QueryList<Cell<Stone>>;
 
-  constructor() { }
+  constructor(private gs: GameService) { 
+		this.initialize();
+	}
 
-  ngOnInit() { }
+  ngOnInit() {
+		this.gs.placed.subscribe(placed => {
+			if(placed) {
+				this.board = this.gs.getBoard();
+			this.initialize();
+		})
+
+		this.gs.isNewGame.subscribe(newGame => {
+			if(newGame) {
+				this.initialize();
+			}
+		});
+	}
 
 	ngOnChanges() {
-		console.log('OnChanges, Board has ' + this.cells.length + ' children');
+	}
+
+	private initialize() {
+		this.board = this.gs.getBoard();
 	}
 
 	getStone(x: any, y: any) {
