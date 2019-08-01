@@ -54,8 +54,10 @@ export class GameComponent implements OnInit {
 				console.log('Next stone is ' + JSON.stringify(next));
 				console.log('Queue now looks like ' + this.queue);
 
+				// TODO: Move setAt into GameService, create an Observable for BoardComponent
 				if(this.game.setAt(coords['x'], coords['y'], next)) {
 					console.log(next + ' placed successfully.');
+					this.gs.setPlaced(next);
 
 					if(this.game.deck.hasNext()) {
 						this.queue.push(this.game.deck.pop());
