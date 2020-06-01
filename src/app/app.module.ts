@@ -14,7 +14,7 @@ import { MatDialogModule,
 import { AppComponent } from './app.component';
 import { CellComponent } from './components/cell/cell.component';
 import { BoardComponent } from './components/board/board.component';
-import { GameComponent } from './components/game/game.component';
+import { GameComponent } from './features/game/components/game.component';
 import { SaveComponent } from './components/save/save.component';
 import { LoadComponent, LoadDialog } from './components/load/load.component';
 import { GameOverComponent, GameOverDialog } from './components/game-over/game-over.component';

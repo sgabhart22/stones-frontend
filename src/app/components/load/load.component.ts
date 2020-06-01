@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { GameService } from '../../services/game.service';
+import { GameService } from '../../features/game/services/game.service';
 
 @Component({
   selector: 'app-load',

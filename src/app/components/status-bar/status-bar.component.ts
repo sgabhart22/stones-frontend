@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GameService } from '../../services/game.service';
+import { GameService } from '../../features/game/services/game.service';
 
 @Component({
   selector: 'app-status-bar',

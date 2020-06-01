@@ -1,7 +1,7 @@
-import { Board } from '../shared/board';
-import { Stone } from './stone-model';
-import { StoneDeck } from './stone-deck';
-import { calcScore } from '../constants';
+import { Board } from '../../../shared/board';
+import { Stone } from '../../../models/stone-model';
+import { StoneDeck } from '../../../models/stone-deck';
+import { calcScore } from '../../../constants';
 
 export class Game {
   public board: Board<Stone>;

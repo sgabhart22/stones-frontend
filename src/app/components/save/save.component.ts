@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SaveService } from '../../services/save.service';
-import { GameService } from '../../services/game.service';
+import { GameService } from '../../features/game/services/game.service';
 
 @Component({
   selector: 'app-save',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 
-import { Board } from '../../shared/board';
-import { Game } from '../../models/game';
-import { Stone } from '../../models/stone-model';
-import { StoneDeck } from '../../models/stone-deck';
-import { GameService } from '../../services/game.service';
-import { CellService } from '../../services/cell.service';
+import { Board } from '../../../shared/board';
+import { Game } from '../models/game';
+import { Stone } from '../../../models/stone-model';
+import { StoneDeck } from '../../../models/stone-deck';
+import { GameService } from '../services/game.service';
+import { CellService } from '../../../services/cell.service';
 
 @Component({
   selector: 'app-game',
