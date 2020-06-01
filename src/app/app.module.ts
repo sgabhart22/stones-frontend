@@ -19,6 +19,10 @@ import { SaveComponent } from './components/save/save.component';
 import { LoadComponent, LoadDialog } from './components/load/load.component';
 import { GameOverComponent, GameOverDialog } from './components/game-over/game-over.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,15 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
 		MatInputModule,
 		MatButtonModule,
 		MatToolbarModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+		StoreModule.forRoot(reducers, {
+      metaReducers, 
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+      }
+    }),
+		!environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [
 		SimpleTimer

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "stony-frontend"
+  "defaultProject": "stony-frontend",
+	"cli": {
+		"defaultCollection": "@ngrx/schematics"
+	}
 }
