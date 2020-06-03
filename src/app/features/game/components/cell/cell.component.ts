@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Stone } from '../../models/stone-model';
-import { colormap } from '../../constants';
+import { Stone } from '../../../../models/stone-model';
+import { colormap } from '../../../../constants';
 
 import { CellService } from '../../services/cell.service';
 

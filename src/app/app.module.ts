@@ -12,13 +12,13 @@ import { MatDialogModule,
 					MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { CellComponent } from './components/cell/cell.component';
+import { CellComponent } from './features/game/components/cell/cell.component';
 import { BoardComponent } from './features/game/components/board/board.component';
-import { GameComponent } from './features/game/components/game.component';
+import { GameComponent } from './features/game/components/game/game.component';
 import { SaveComponent } from './components/save/save.component';
 import { LoadComponent, LoadDialog } from './components/load/load.component';
 import { GameOverComponent, GameOverDialog } from './components/game-over/game-over.component';
-import { StatusBarComponent } from './components/status-bar/status-bar.component';
+import { StatusBarComponent } from './features/status/components/status-bar/status-bar.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
