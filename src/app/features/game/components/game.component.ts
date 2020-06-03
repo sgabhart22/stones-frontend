@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SimpleTimer } from 'ng2-simple-timer';
 
-import { Board } from '../../../shared/board';
+import { Board } from '../models/board';
 import { Game } from '../models/game';
 import { Stone } from '../../../models/stone-model';
 import { StoneDeck } from '../../../models/stone-deck';

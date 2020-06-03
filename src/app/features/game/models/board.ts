@@ -1,4 +1,4 @@
-import { Cell } from './cell';
+import { Cell } from '../../../shared/cell';
 
 export class Board<T> {
   rows: number;

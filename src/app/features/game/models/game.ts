@@ -1,4 +1,4 @@
-import { Board } from '../../../shared/board';
+import { Board } from './board';
 import { Stone } from '../../../models/stone-model';
 import { StoneDeck } from '../../../models/stone-deck';
 import { calcScore } from '../../../constants';
