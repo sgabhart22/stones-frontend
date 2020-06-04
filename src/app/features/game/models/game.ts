@@ -1,6 +1,6 @@
 import { Board } from './board';
-import { Stone } from '../../../models/stone-model';
-import { StoneDeck } from '../../../models/stone-deck';
+import { Stone } from './stone';
+import { StoneDeck } from './deck';
 import { calcScore } from '../../../constants';
 
 export class Game {

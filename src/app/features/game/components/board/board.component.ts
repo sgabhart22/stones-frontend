@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { Board } from '../../models/board';
-import { Stone } from '../../../../models/stone-model';
+import { Stone } from '../../models/stone';
 
 @Component({
   selector: 'app-board',

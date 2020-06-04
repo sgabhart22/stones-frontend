@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { Stone } from '../models/stone-model';
-import { StoneDeck } from '../models/stone-deck';
+import { Stone } from '../features/game/models/stone';
+import { StoneDeck } from '../features/game/models/deck';
 
 @Injectable({
   providedIn: 'root'

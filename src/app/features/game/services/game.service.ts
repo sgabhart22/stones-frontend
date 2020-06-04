@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { Game } from '../models/game';
-import { Stone } from '../../../models/stone-model';
+import { Stone } from '../models/stone';
 
 @Injectable({
   providedIn: 'root'

@@ -3,8 +3,7 @@ import { SimpleTimer } from 'ng2-simple-timer';
 
 import { Board } from '../../models/board';
 import { Game } from '../../models/game';
-import { Stone } from '../../../../models/stone-model';
-import { StoneDeck } from '../../../../models/stone-deck';
+import { Stone } from '../../models/stone';
 import { GameService } from '../../services/game.service';
 import { CellService } from '../../services/cell.service';
 

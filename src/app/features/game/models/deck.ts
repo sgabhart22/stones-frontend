@@ -1,4 +1,4 @@
-import { Stone } from './stone-model';
+import { Stone } from './stone';
 
 export class StoneDeck {
 
